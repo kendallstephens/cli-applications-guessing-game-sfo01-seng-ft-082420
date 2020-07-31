@@ -1,18 +1,12 @@
-# Code your solution here!
+require 'pry'
 def run_guessing_game
-puts "Guess a number between 1 and 6."
-user_input = gets.chomp
-comp_num = rand(1..6)
-while user_input != "exit" do
-if user_input.to_i == comp_num
-puts "You guessed the correct number!"
-else 
-puts "The computer guessed #{comp_num}."
-end 
-comp_num = rand(1..6)
-user_input = gets.chomp
-end
-if user_input == "exit"
-puts "Goodbye!"
+  user_input = gets.chomp
+  rand_num = rand(6) + 1
+   if user_input == "exit"
+    puts "Goodbye!"
+  elsif user_input.to_i != rand_num
+    puts"/Sorry! The computer guessed #{rand_num}/"
+  elsif user_input.to_i == rand_num
+  puts "/You guessed the correct number!/"
+    end
   end
-end
